@@ -136,8 +136,9 @@ img {
 }
 /* #endregion header */
 
-/* #region box */
-.box {
+/* #region hero */
+
+.hero {
   max-width: 1440px;
   background-color: #2e2f42;
   padding: 188px 0;
@@ -161,7 +162,7 @@ img {
   letter-spacing: 0.02em;
   color: #ffffff;
 }
-.button {
+.hero-button {
   margin: 0 auto;
   display: block;
   min-width: 169px;
@@ -179,13 +180,14 @@ img {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.button:hover,
-.button:focus {
+.hero-button:hover,
+.hero-button:focus {
   background-color: #404bbf;
 }
-/* #endregion box */
+/* #endregion hero */
 
 /* #region desc */
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -231,6 +233,7 @@ img {
 /* #endregion desc */
 
 /* #region team */
+
 .team {
   background-color: #f4f4fd;
 }
@@ -438,4 +441,186 @@ img {
   background-color: #31d0aa;
 }
 
+/* -------------------------- */
+.container.footer-subscribe {
+  margin-left: auto;
+}
+.subscribe-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #fff;
+}
+.subscribe-label {
+}
+.subscribe-input {
+}
+.subscribe-button {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: #fff;
+}
+
 /* #endregion footer */
+
+/* #region modal */
+
+.backdrop {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  margin: 80px auto 8px;
+
+  border-radius: 4px;
+  width: 408px;
+  min-height: 584px;
+
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
+    0 2px 1px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fcfcfc;
+
+  transform: translate(-50%, -50%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop:not(.is-open) .modal {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+/* ------------------ */
+.close-button {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+
+  line-height: 0;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+
+  border-radius: 50px;
+  border-color: #e7e9fc;
+}
+/* ------------------------- */
+
+.modal-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #2e2f42;
+
+  margin: 72px 24px 16px;
+}
+
+.modal-form {
+  margin-right: 24px;
+  margin-left: 24px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 8px;
+
+  border-radius: 4px;
+  width: 360px;
+  min-height: 336px;
+  margin-bottom: 16px;
+}
+.modal-label {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+
+  margin-bottom: 4px;
+}
+.modal-cont-input {
+  width: 100%;
+  position: relative;
+}
+.modal-form-wrraper {
+  display: block;
+  width: 100%;
+
+  margin-bottom: 8px;
+}
+.modal-input {
+  display: block;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  width: 100%;
+  height: 40px;
+
+  padding-left: 38px;
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-input:hover,
+.modal-input:focus {
+  border-color: #4d5ae5;
+}
+.modal-icons {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+}
+.modal-input:focus + .modal-icons {
+  fill: #2e2f42;
+}
+
+.modal-icons:hover,
+.modal-icons:focus {
+  fill: #4d5ae5;
+}
+
+.modal-form-comment {
+}
+.modal-label.comment {
+}
+.modal-textarea {
+  display: block;
+  border-radius: 4px;
+  width: 360px;
+  height: 336px;
+}
+.modal-textarea::placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16667;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
+}
+.modal-checkbox {
+}
+/* #endregion modal */
